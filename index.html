@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="¿Abdomen abultado a las 6:00 PM? No es grasa, son malezas biológicas. El protocolo técnico de 14 días.">
+  
+  <style>
+    /* V11 ULTRA-LIGHT PERFORMANCE CONFIG */
+    :root {
+      --emerald: #013220;
+      --gold: #C5A059;
+      --bone: #F9F9F9;
+      --white: #FFFFFF;
+      --black: #050505;
+      --red: #C0392B;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body { 
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bone);
+      color: var(--black);
+      line-height: 1.5;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container { width: 100%; max-width: 480px; margin: 0 auto; padding: 0 16px; }
+
+    /* Performance Elements */
+    .sticky-announcement { 
+      position: sticky; top: 0; z-index: 1000; background: var(--gold); color: var(--black);
+      padding: 12px 0; text-align: center; font-weight: 800; font-size: 13px;
+    }
+
+    section { padding: 48px 0; }
+    h1 { font-size: 28px; font-weight: 900; line-height: 1.15; text-align: center; margin-bottom: 20px; }
+    .subhead { font-size: 18px; text-align: center; opacity: 0.85; margin-bottom: 32px; font-weight: 400; }
+
+    /* V11 TACTILE BUTTONS (48px min) */
+    .btn-cta { 
+      display: block; width: 100%; min-height: 56px; background: var(--gold); color: var(--emerald);
+      border-radius: 12px; font-weight: 900; font-size: 18px; text-align: center; 
+      display: flex; align-items: center; justify-content: center; text-decoration: none;
+      box-shadow: 0 8px 20px rgba(197, 160, 89, 0.4); border: none; cursor: pointer;
+      animation: pulseV11 2s infinite;
+    }
+    @keyframes pulseV11 {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+    .sp-micro { font-size: 12px; text-align: center; margin-top: 12px; font-weight: 700; opacity: 0.6; }
+
+    /* Grid cards */
+    .grid-v11 { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+    .card-v11 { background: var(--white); border-radius: 20px; padding: 24px; border: 1px solid rgba(1,50,32,0.05); }
+    .card-title { color: var(--emerald); font-weight: 900; font-size: 17px; margin-bottom: 8px; display: block; }
+    .card-text { font-size: 14px; opacity: 0.8; }
+
+    /* Timeline */
+    .timeline-v11 { border-left: 2px solid var(--emerald); margin-left: 20px; padding-left: 24px; position: relative; }
+    .tl-item { margin-bottom: 32px; position: relative; }
+    .tl-item::before { 
+      content: ''; position: absolute; left: -33px; top: 0; width: 16px; height: 16px; 
+      background: var(--emerald); border-radius: 50%; border: 4px solid var(--bone);
+    }
+    .tl-day { font-weight: 900; font-size: 14px; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; display: block; }
+    .tl-title { font-weight: 800; font-size: 17px; margin-bottom: 4px; }
+    .tl-desc { font-size: 14px; opacity: 0.75; }
+
+    /* Value Stack */
+    .bundle-box { border: 2.5px solid var(--gold); border-radius: 24px; padding: 32px 20px; background: var(--white); margin: 40px 0; }
+    .stack-line { display: flex; justify-content: space-between; font-size: 14px; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+    .price-box { text-align: center; margin-top: 32px; }
+    .old-p { text-decoration: line-through; color: var(--red); font-weight: 700; margin-bottom: 8px; }
+    .new-p { display: block; font-size: 64px; font-weight: 900; color: var(--emerald); letter-spacing: -2px; line-height: 1; margin-bottom: 24px; }
+
+    /* Accelerator */
+    .accelerator-v11 { background: var(--black); border: 2px solid var(--gold); border-radius: 20px; padding: 24px; color: var(--white); margin: 32px 0; }
+    .acc-tag { color: var(--gold); font-weight: 900; font-size: 13px; display: block; margin-bottom: 8px; }
+
+    /* FAQ */
+    details { background: var(--white); border-radius: 12px; margin-bottom: 10px; border: 1px solid #f0f0f0; }
+    summary { padding: 16px; font-weight: 800; cursor: pointer; list-style: none; display: flex; justify-content: space-between; }
+    summary::after { content: '+'; color: var(--gold); font-size: 20px; }
+    details[open] summary::after { content: '−'; }
+    .faq-content { padding: 0 16px 16px; font-size: 14px; opacity: 0.8; }
+
+    /* Footer */
+    .footer-v11 { text-align: center; padding: 48px 0; border-top: 1px solid #ddd; }
+    .f-links { margin: 20px 0; font-size: 12px; font-weight: 700; opacity: 0.5; }
+    .f-links a { color: var(--black); scroll-behavior: smooth; cursor: pointer; }
+
+    /* Modal */
+    .modal-v11 { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; display: none; padding: 20px; }
+    .modal-content { background: var(--white); border-radius: 20px; padding: 32px; max-height: 90vh; overflow-y: auto; }
+  </style>
+
+  <title>El Reinicio Biológico | Zeklo Club V11</title>
+  <link rel="icon" type="image/webp" href="assets/favicon.webp">
+
+  <!-- PIXEL DIFERIDO -->
+  <script>
+    const fb = () => {
+      if(window.px_in) return; window.px_in = true;
+      !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1377433624081067'); fbq('track', 'PageView');
+    }
+    window.addEventListener('scroll', fb, {once:true, passive:true});
+  </script>
+</head>
+<body>
+
+  <div class="sticky-announcement">
+    ⚡ OFERTA DE LANZAMIENTO: 26€ (Antes 205€) - ACCESO INMEDIATO
+  </div>
+
+  <!-- HERO -->
+  <section>
+    <div class="container">
+      <h1>¿Abdomen Abultado o Hinchazón? No es grasa, son "malezas" biológicas influenciando tu cerebro 🪱🧠</h1>
+      <p class="subhead">Elimina el sobrecrecimiento de Cándida y parásitos que sabotean tu digestión y secuestran tu energía. El protocolo técnico de 14 días para resetear tu microbiota desde casa hoy.</p>
+      
+      <img src="assets/bundle.webp" alt="El Reinicio Biológico Bundle" style="width:100%; max-width:400px; height: auto; display:block; margin: 0 auto 32px;" width="400" loading="eager" fetchpriority="high">
+      
+      <button onclick="pay()" class="btn-cta">SÍ, QUIERO MI REINICIO — 26€</button>
+      <p class="sp-micro">Más de 1.847 mujeres ya han iniciado hoy</p>
+    </div>
+  </section>
+
+  <!-- COHERENCIA -->
+  <section style="background: var(--white);">
+    <div class="container">
+      <h2 style="font-size: 24px; text-align: center; margin-bottom: 12px; font-weight: 900;">Tu cuerpo no está roto. Está siendo colonizado.</h2>
+      <div class="grid-v11">
+        <div class="card-v11">
+          <span class="card-title">🫧 Gases y Hinchazón</span>
+          <p class="card-text">Las malezas biológicas fermentan lo que comes antes de que tú lo aproveches.</p>
+        </div>
+        <div class="card-v11">
+          <span class="card-title">🪫 Cansancio Crónico</span>
+          <p class="card-text">Tu sistema inmune gasta el 70% de tu energía intentando apagar la inflamación intestinal.</p>
+        </div>
+        <div class="card-v11">
+          <span class="card-title">🧠 Neblina Mental</span>
+          <p class="card-text">Las toxinas de la cándida viajan del intestino a tu cerebro, nublando tu enfoque.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section>
+    <div class="container">
+      <h2 style="margin-bottom: 32px;">Tu transformación paso a paso:</h2>
+      <div class="timeline-v11">
+        <div class="tl-item">
+          <span class="tl-day">DÍAS 1-4</span>
+          <p class="tl-title">Vaciado Técnico.</p>
+          <p class="tl-desc">Detenemos el suministro a los saboteadores biológicos.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-day">DÍAS 5-10</span>
+          <p class="tl-title">Sello Intestinal.</p>
+          <p class="tl-desc">Reparamos la barrera para que la neblina mental desaparezca.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-day">DÍAS 11-14</span>
+          <p class="tl-title">Repoblación Protectora.</p>
+          <p class="tl-desc">Instalamos la nueva flora para que el vientre siga plano.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUNDLE -->
+  <section style="background: var(--white);">
+    <div class="container">
+      <div class="bundle-box">
+        <h3 style="font-size: 20px; color: var(--emerald); text-align: left; margin-bottom: 24px;">TU COMPRA INCLUYE TODO ESTO:</h3>
+        <div class="stack-line"><span>Protocolo de 14 días "EL Renicio Biológico"</span> <strong>97€</strong></div>
+        <div class="stack-line"><span>Recetario Express Desinflamatorio</span> <strong>47€</strong></div>
+        <div class="stack-line"><span>Hoja de ruta diaria</span> <strong>27€</strong></div>
+        <div class="stack-line"><span>Guía de Saboteadores Ocultos</span> <strong>17€</strong></div>
+        <div class="stack-line" style="border:none"><span>Lista Inteligente</span> <strong>17€</strong></div>
+        
+        <div class="price-box">
+          <p class="old-p">Valor Total: 205€</p>
+          <span class="new-p">26€</span>
+          <button onclick="pay()" class="btn-cta">¡LO QUIERO TODO POR 26€!</button>
+        </div>
+      </div>
+
+      <!-- ACCELERATOR -->
+      <div class="accelerator-v11">
+        <span class="acc-tag">⚡ ¿TIENES MUCHA PRISA?</span>
+        <p style="font-weight: 700;">Dentro del checkout podrás activar el ACELERADOR DETOX 48H por solo 17,99€ adicionales. Resultados en 2 días en lugar de 14.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ / GARANTIA -->
+  <section>
+    <div class="container">
+      <div style="background: var(--emerald); color: var(--white); padding: 32px; border-radius: 20px; text-align: center; margin-bottom: 40px;">
+        <span style="font-size: 40px; display: block; margin-bottom: 12px;">🛡️</span>
+        <p style="font-weight: 900; font-size: 18px; margin-bottom: 8px;">Garantía Zeklo Club</p>
+        <p style="font-size: 14px;">15 días de prueba. Si no te sientes ligera, te devolvemos el dinero sin preguntas.</p>
+      </div>
+
+      <h3 style="margin-bottom: 20px;">Dudas Frecuentes</h3>
+      <details>
+        <summary>¿Cuándo recibo acceso?</summary>
+        <div class="faq-content">El acceso es inmediato tras el pago. Recibirás un correo con tus claves.</div>
+      </details>
+      <details>
+        <summary>¿Necesito suplementos?</summary>
+        <div class="faq-content">El protocolo se basa en alimentos reales, pero sugerimos opciones naturales para acelerar el proceso.</div>
+      </details>
+      <details>
+        <summary>¿Es seguro el pago?</summary>
+        <div class="faq-content">Usamos Hotmart, la plataforma líder mundial en productos digitales con encriptación bancaria.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-v11">
+    <div class="container">
+      <p style="font-weight: 900; color: var(--emerald); font-size: 20px;">ZEKLO CLUB</p>
+      <div class="f-links">
+        <a onclick="sh('m-t')">Términos y Condiciones</a> | <a onclick="sh('m-p')">Política de Privacidad</a> | <a href="mailto:zeklo.club@gmail.com">Contacto</a>
+      </div>
+      <p style="font-size: 12px; opacity: 0.4;">© 2026 Zeklo Club. Hecho para mujeres que deciden tomar el control.</p>
+    </div>
+  </footer>
+
+  <!-- MODALES -->
+  <div id="m-t" class="modal-v11" onclick="cl()"><div class="modal-content" onclick="event.stopPropagation()">
+    <h3>Términos y Condiciones</h3><br>
+    <div class="modal-body">
+      <h4>1. Introducción</h4>
+      <p>Bienvenido a Zeklo Club. Al acceder y utilizar nuestro sitio web y adquirir "El Reinicio Biológico", aceptas estar sujeto a los siguientes términos y condiciones. Te rogamos que los leas detenidamente antes de realizar cualquier compra o utilizar nuestros servicios.</p>
+
+      <h4>2. Descripción del Servicio</h4>
+      <p>Zeklo Club ofrece productos digitales, específicamente el protocolo "El Reinicio Biológico", que incluye un libro digital y varios bonos complementarios. Al tratarse de un producto digital, el acceso se otorga de manera inmediata tras la confirmación del pago.</p>
+
+      <h4>3. Obligaciones del Usuario</h4>
+      <p>Al utilizar nuestros servicios, el usuario se compromete a:
+      <br>• Ser mayor de 18 años o contar con el consentimiento de un tutor legal.
+      <br>• Proporcionar información veraz y actualizada durante el proceso de compra.
+      <br>• No distribuir, revender ni compartir el material digital adquirido, el cual es de uso estrictamente personal.
+      <br>• Consultar con un profesional de la salud antes de iniciar cualquier cambio significativo en su dieta o estilo de vida.</p>
+
+      <h4>4. Condiciones de Pago</h4>
+      <p>El precio del producto es de 26€ (IVA incluido). Los pagos se procesan de manera segura a través de plataformas de terceros (Redsys, Stripe o PayPal). Zeklo Club no almacena los datos de tu tarjeta de crédito.</p>
+
+      <h4>5. Política de Reembolso</h4>
+      <p>Ofrecemos una garantía de devolución de 7 días. Si durante los primeros 7 días tras tu compra consideras que el protocolo no es para ti, puedes solicitar el reembolso íntegro enviando un correo a nuestra dirección de contacto. El reembolso se procesará sin preguntas adicionales.</p>
+
+      <h4>6. Propiedad Intelectual</h4>
+      <p>Todo el contenido, diseño, textos, gráficos y materiales proporcionados en este sitio web y en los productos digitales son propiedad exclusiva de Zeklo Club. Queda estrictamente prohibida su reproducción, distribución o modificación sin autorización previa por escrito.</p>
+
+      <h4>7. Limitación de Responsabilidad</h4>
+      <p>La información proporcionada en "El Reinicio Biológico" tiene fines puramente educativos e informativos. No sustituye el consejo, diagnóstico o tratamiento médico profesional. Zeklo Club no se hace responsable de los resultados individuales, ya que estos pueden variar según cada persona.</p>
+
+      <h4>8. Ley Aplicable</h4>
+      <p>Estos términos y condiciones se rigen e interpretan de acuerdo con las leyes de España. Cualquier disputa que surja en relación con estos términos estará sujeta a la jurisdicción exclusiva de los tribunales españoles.</p>
+
+      <h4>9. Contacto</h4>
+      <p>Si tienes alguna pregunta sobre estos Términos y Condiciones, puedes contactarnos en cualquier momento a través de: zeklo.club@gmail.com</p>
+    </div>
+    <button onclick="cl()" style="margin-top:20px; padding:12px; background:#eee; border-radius:8px; border:none; width:100%; font-weight:700; cursor:pointer">CERRAR</button>
+  </div></div>
+  <div id="m-p" class="modal-v11" onclick="cl()"><div class="modal-content" onclick="event.stopPropagation()">
+    <h3>Política de Privacidad</h3><br>
+    <div class="modal-body">
+      <h4>1. Introducción</h4>
+      <p>En Zeklo Club, valoramos y respetamos tu privacidad. Esta Política de Privacidad explica cómo recopilamos, utilizamos, protegemos y compartimos tu información personal cuando visitas nuestro sitio web y adquieres nuestros productos digitales.</p>
+
+      <h4>2. Recopilación de Datos</h4>
+      <p>Podemos recopilar los siguientes tipos de información:
+      <br>• Datos de contacto: Nombre y dirección de correo electrónico al realizar una compra.
+      <br>• Datos de pago: Información procesada de forma segura a través de nuestros proveedores de pago (Redsys, Stripe, PayPal). Nosotros no almacenamos los detalles completos de tu tarjeta.
+      <br>• Datos de navegación: Información sobre cómo interactúas con nuestro sitio web (dirección IP, tipo de navegador, páginas visitadas) mediante el uso de cookies.</p>
+
+      <h4>3. Uso de los Datos</h4>
+      <p>Utilizamos tu información personal para los siguientes fines:
+      <br>• Procesar tus pagos y entregar los productos digitales adquiridos.
+      <br>• Enviarte correos electrónicos transaccionales (confirmación de compra, acceso al producto).
+      <br>• Proporcionar soporte al cliente y responder a tus consultas.
+      <br>• Mejorar nuestro sitio web y personalizar tu experiencia de usuario.
+      <br>• Enviarte comunicaciones de marketing (solo si has dado tu consentimiento expreso), de las cuales puedes darte de baja en cualquier momento.</p>
+
+      <h4>4. Almacenamiento y Seguridad</h4>
+      <p>Implementamos medidas de seguridad técnicas y organizativas estándar de la industria para proteger tu información personal contra el acceso no autorizado, la alteración, divulgación o destrucción. Tus datos se almacenan en servidores seguros y solo el personal autorizado tiene acceso a ellos.</p>
+
+      <h4>5. Derechos del Usuario (RGPD)</h4>
+      <p>De acuerdo con el Reglamento General de Protección de Datos (RGPD), tienes derecho a:
+      <br>• Acceder a los datos personales que tenemos sobre ti.
+      <br>• Solicitar la rectificación de datos inexactos o incompletos.
+      <br>• Solicitar la eliminación de tus datos personales ("derecho al olvido").
+      <br>• Oponerte al procesamiento de tus datos o solicitar la restricción del mismo.
+      <br>• Solicitar la portabilidad de tus datos a otro proveedor de servicios.
+      <br>Para ejercer cualquiera de estos derechos, por favor contáctanos a través del correo electrónico proporcionado al final de esta política.</p>
+
+      <h4>6. Cookies</h4>
+      <p>Utilizamos cookies y tecnologías similares para garantizar el funcionamiento básico del sitio web, analizar el tráfico y mejorar tu experiencia. Puedes configurar tu navegador para rechazar todas las cookies o para que te avise cuando se envíe una cookie, aunque esto podría afectar la funcionalidad de ciertas partes del sitio.</p>
+
+      <h4>7. Terceros</h4>
+      <p>No vendemos, intercambiamos ni transferimos tu información personal a terceros. Esto no incluye a los terceros de confianza que nos asisten en la operación de nuestro sitio web, la conducción de nuestro negocio o el servicio a nuestros usuarios (como pasarelas de pago y proveedores de email marketing), siempre que dichas partes acuerden mantener esta información confidencial.</p>
+
+      <h4>8. Contacto</h4>
+      <p>Si tienes alguna pregunta, inquietud o solicitud relacionada con esta Política de Privacidad o el manejo de tus datos personales, no dudes en contactarnos en: zeklo.club@gmail.com</p>
+    </div>
+    <button onclick="cl()" style="margin-top:20px; padding:12px; background:#eee; border-radius:8px; border:none; width:100%; font-weight:700; cursor:pointer">CERRAR</button>
+  </div></div>
+
+  <script>
+    const pay = () => {
+      if(typeof fbq === 'function') fbq('track', 'AddToCart');
+      window.open('https://pay.hotmart.com/W104988940M?checkoutMode=10&src=v11_cro', '_blank');
+    };
+    
+    // Modals
+    const sh = (id) => { document.getElementById(id).style.display = 'flex'; };
+    const cl = () => { document.querySelectorAll('.modal-v11').forEach(m => m.style.display='none'); };
+  </script>
+</body>
+</html>
